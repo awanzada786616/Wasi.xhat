@@ -4,184 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salaar Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #7f00ff, #00bfff);
       color: white;
-    }
-    .login-container, .tools-container {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
       text-align: center;
     }
-    .login-container.active, .tools-container.active {
+    .login {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
-    .login-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 30px;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      margin-top: 40px;
-    }
-    input {
-      padding: 12px;
-      font-size: 16px;
+    .login input {
+      margin: 10px;
+      padding: 10px;
       border-radius: 10px;
       border: none;
-      outline: none;
-      width: 250px;
-      margin-bottom: 15px;
-      background: #fff;
-      color: #000;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background: #00e676;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #00c853;
-    }
-    .logo-top {
       width: 200px;
-      display: block;
-      margin: 10px auto 0 auto;
     }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 600px;
-      margin: 10px auto 20px auto;
+    .login button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #00c851;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .logo {
+      margin-top: 20px;
+    }
+    .logo img {
+      width: 200px;
+    }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 20px;
     }
     .tool {
+      width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-decoration: none;
       color: white;
-    }
-    .tool-icon {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      animation: pulse 2s infinite;
-      transition: transform 0.3s;
-    }
-    .tool:hover .tool-icon {
-      transform: scale(1.1);
+      animation: bounce 2s infinite;
     }
     .tool img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 5px;
     }
-    .tool span {
-      margin-top: 10px;
-      font-weight: bold;
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-    .whatsapp-button {
+    .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background-color: #25D366;
       color: white;
-      padding: 10px 15px;
       border-radius: 50px;
+      padding: 10px 20px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     footer {
-      position: fixed;
-      bottom: 10px;
-      text-align: center;
-      width: 100%;
+      margin-top: 30px;
       font-size: 14px;
-      color: #eee;
     }
   </style>
-</head>
-<body>
-  <img src="https://i.postimg.cc/JnXTd12c/20250619-145837.png" alt="Salaar Logo" class="logo-top">
-
-  <div class="login-container active">
-    <div class="login-box">
-      <h2>Welcome to Salaar Tools</h2>
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button onclick="login()">Login</button>
-    </div>
-  </div>
-
-  <div class="tools-container">
-    <div class="tools-grid">
-      <a href="https://zefoy.com" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/vBQB0vXQ/images-1-1.jpg" alt="TikTok Views"></div>
-        <span>TikTok Views</span>
-      </a>
-      <a href="https://famofc-tool.vercel.app/script12/camerahk.html" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/wMR1SQyn/download-4.jpg" alt="Camera Crack"></div>
-        <span>Camera Crack</span>
-      </a>
-      <a href="https://temp-mail.org/en/" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/sfZWv31y/download-6.jpg" alt="Temp Mail"></div>
-        <span>Temp Mail</span>
-      </a>
-      <a href="https://famofc-tool.vercel.app/script12/cardbin.html" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/YqSQMZTB/download-5.png" alt="BIN Card"></div>
-        <span>BIN Card</span>
-      </a>
-      <a href="https://famofc-tool.vercel.app/script12/fakess.html" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/CLT83dYX/images-13.png" alt="Jazz Fake SS"></div>
-        <span>Jazz Fake SS</span>
-      </a>
-      <a href="https://simownerdetails.net.pk/" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/YqNw3DbZ/images-1-2.jpg" alt="Number Data"></div>
-        <span>Number Data</span>
-      </a>
-      <a href="https://wasixstore.vercel.app" class="tool" target="_blank">
-        <div class="tool-icon"><img src="https://i.postimg.cc/8Pg7c370/images-18.jpg" alt="UK Sim Buy"></div>
-        <span>UK Sim Buy</span>
-      </a>
-    </div>
-  </div>
-
-  <a class="whatsapp-button" href="https://wa.me/971568482410" target="_blank">WhatsApp</a>
-  <footer>All Rights Reserved © Salaar Tools</footer>
-
   <script>
     function login() {
-      const user = document.getElementById('username').value;
-      const pass = document.getElementById('password').value;
-      if (user === 'salaar' && pass === 'salaar786') {
-        document.querySelector('.login-container').classList.remove('active');
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (username === "salaar" && password === "salaar786") {
+        document.querySelector(".login").style.display = "none";
         setTimeout(() => {
-          document.querySelector('.tools-container').classList.add('active');
+          document.querySelector(".main").style.display = "block";
         }, 3000);
       } else {
-        alert('Incorrect Username or Password');
+        alert("Incorrect credentials");
       }
     }
   </script>
+</head>
+<body>
+  <div class="login">
+    <h2>Login to Salaar Tools</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+  </div>
+  <div class="main" style="display:none;">
+    <div class="logo">
+      <img src="https://i.postimg.cc/JnXTd12c/20250619-145837.png" alt="Salaar Tools" />
+    </div>
+    <div class="tools">
+      <a class="tool" href="https://zefoy.com" target="_blank">
+        <img src="https://i.postimg.cc/vBQB0vXQ/images-1-1.jpg" alt="TikTok Views" />
+        TikTok Views
+      </a>
+      <a class="tool" href="https://famofc-tool.vercel.app/script12/camerahk.html" target="_blank">
+        <img src="https://i.postimg.cc/wMR1SQyn/download-4.jpg" alt="Camera Crack" />
+        Camera Crack
+      </a>
+      <a class="tool" href="https://temp-mail.org/en/" target="_blank">
+        <img src="https://i.postimg.cc/sfZWv31y/download-6.jpg" alt="Temp Mail" />
+        Temp Mail
+      </a>
+      <a class="tool" href="https://famofc-tool.vercel.app/script12/cardbin.html" target="_blank">
+        <img src="https://i.postimg.cc/YqSQMZTB/download-5.png" alt="BIN Card" />
+        BIN Card
+      </a>
+      <a class="tool" href="https://famofc-tool.vercel.app/script12/fakess.html" target="_blank">
+        <img src="https://i.postimg.cc/CLT83dYX/images-13.png" alt="Jazz Fake SS" />
+        Jazz Fake SS
+      </a>
+      <a class="tool" href="https://simownerdetails.net.pk/" target="_blank">
+        <img src="https://i.postimg.cc/YqNw3DbZ/images-1-2.jpg" alt="Number Data" />
+        Number Data
+      </a>
+      <a class="tool" href="https://wasixstore.vercel.app" target="_blank">
+        <img src="https://i.postimg.cc/8Pg7c370/images-18.jpg" alt="UK Sim Buy" />
+        UK Sim Buy
+      </a>
+      <a class="tool" href="https://vrcentpunjab.com" target="_blank">
+        <img src="https://i.postimg.cc/rwsjF61X/download-7.png" alt="Vehicle Details" />
+        Vehicle Details
+      </a>
+      <a class="tool" href="https://gmailcheck.com/" target="_blank">
+        <img src="https://i.postimg.cc/28kRG6DQ/download-7.jpg" alt="Gmail Check" />
+        Gmail Check
+      </a>
+      <a class="tool" href="https://minahilsimtracker.com/" target="_blank">
+        <img src="https://i.postimg.cc/YqNw3DbZ/images-1-2.jpg" alt="Fresh Sim Data" />
+        Fresh Sim Data
+      </a>
+      <a class="tool" href="https://receive-sms.cc/US-Phone-Number/18575296855" target="_blank">
+        <img src="https://i.postimg.cc/fRH8sz1h/images-14.png" alt="Virtual Whatsapp" />
+        Virtual Whatsapp
+      </a>
+    </div>
+    <a class="whatsapp" href="https://wa.me/971568482410" target="_blank">WhatsApp</a>
+    <footer>
+      All Rights Reserved © Salaar Tools
+    </footer>
+  </div>
 </body>
 </html>
