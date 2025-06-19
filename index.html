@@ -70,6 +70,13 @@
       margin-top: 20px;
     }
     .tool {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+    .tool-icon {
       width: 120px;
       height: 120px;
       border-radius: 50%;
@@ -79,13 +86,17 @@
       animation: pulse 2s infinite;
       transition: transform 0.3s;
     }
-    .tool:hover {
+    .tool:hover .tool-icon {
       transform: scale(1.1);
     }
     .tool img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    .tool span {
+      margin-top: 10px;
+      font-weight: bold;
     }
     @keyframes pulse {
       0% {
@@ -133,13 +144,34 @@
   <div class="tools-container">
     <img src="https://i.postimg.cc/JnXTd12c/20250619-145837.png" alt="Salaar Logo" class="logo">
     <div class="tools-grid">
-      <a href="https://zefoy.com" class="tool" target="_blank"><img src="https://i.postimg.cc/vBQB0vXQ/images-1-1.jpg" alt="TikTok Views"></a>
-      <a href="https://famofc-tool.vercel.app/script12/camerahk.html" class="tool" target="_blank"><img src="https://i.postimg.cc/wMR1SQyn/download-4.jpg" alt="Camera Crack"></a>
-      <a href="https://temp-mail.org/en/" class="tool" target="_blank"><img src="https://i.postimg.cc/sfZWv31y/download-6.jpg" alt="Temp Mail"></a>
-      <a href="https://famofc-tool.vercel.app/script12/cardbin.html" class="tool" target="_blank"><img src="https://i.postimg.cc/YqSQMZTB/download-5.png" alt="BIN Card"></a>
-      <a href="https://famofc-tool.vercel.app/script12/fakess.html" class="tool" target="_blank"><img src="https://i.postimg.cc/CLT83dYX/images-13.png" alt="Jazz Fake SS"></a>
-      <a href="https://simownerdetails.net.pk/" class="tool" target="_blank"><img src="https://i.postimg.cc/YqNw3DbZ/images-1-2.jpg" alt="Number Data"></a>
-      <a href="https://wasixstore.vercel.app" class="tool" target="_blank"><img src="https://i.postimg.cc/8Pg7c370/images-18.jpg" alt="UK Sim Buy"></a>
+      <a href="https://zefoy.com" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/vBQB0vXQ/images-1-1.jpg" alt="TikTok Views"></div>
+        <span>TikTok Views</span>
+      </a>
+      <a href="https://famofc-tool.vercel.app/script12/camerahk.html" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/wMR1SQyn/download-4.jpg" alt="Camera Crack"></div>
+        <span>Camera Crack</span>
+      </a>
+      <a href="https://temp-mail.org/en/" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/sfZWv31y/download-6.jpg" alt="Temp Mail"></div>
+        <span>Temp Mail</span>
+      </a>
+      <a href="https://famofc-tool.vercel.app/script12/cardbin.html" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/YqSQMZTB/download-5.png" alt="BIN Card"></div>
+        <span>BIN Card</span>
+      </a>
+      <a href="https://famofc-tool.vercel.app/script12/fakess.html" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/CLT83dYX/images-13.png" alt="Jazz Fake SS"></div>
+        <span>Jazz Fake SS</span>
+      </a>
+      <a href="https://simownerdetails.net.pk/" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/YqNw3DbZ/images-1-2.jpg" alt="Number Data"></div>
+        <span>Number Data</span>
+      </a>
+      <a href="https://wasixstore.vercel.app" class="tool" target="_blank">
+        <div class="tool-icon"><img src="https://i.postimg.cc/8Pg7c370/images-18.jpg" alt="UK Sim Buy"></div>
+        <span>UK Sim Buy</span>
+      </a>
     </div>
   </div>
 
